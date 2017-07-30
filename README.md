@@ -6,7 +6,7 @@ This is a microservice API project for Free Code Camp that will accept either a 
 readable date or a unix formatted date and return a json response with the date formatted
 as both. If the input is neither it will return `null` values.
 
-You can test it at [https://immense-brushlands-3354.herokuapp.com/](https://immense-brushlands-3354.herokuapp.com/)
+You can test it at [https:///](https:///)
 
 ### Usage
 

@@ -1,31 +1,26 @@
 var express = require('express')
-var parser = require('body-parser')
-var cors = require('cors')
 var app = express()
+var moment = require('moment')
 var PORT = 3000
 
-app.use(parser.json())
-app.use(cors())
+app.get('/:dateValues', function(req, res) {
+  var dateValues = moment(req.params.dateValues, 'MMMM DD, YYYY', true);
 
-app.get('/dateValues/:dateVal', function(req, res, next) {
-  var dateValues = req.params.dateVal
-  var dateFormattingOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }
-  if(isNaN(dateValues)) {
-    var naturalDate = new Date(dateValues)
-    naturalDate = naturalDate.toLocaleDateString("en-us", dateFormattingOptions)
-    var unixDate = new Date(dateValues).getTime()/1000
-  } else {
-    var unixDate = dateValues
-    var naturalDate = new Date(dateValues * 1000)
-    naturalDate = naturalDate.toLocaleDateString("en-us", dateFormattingOptions)
+  if (!dateValues.isValid())
+    dateValues = moment.unix(req.params.dateValues);
+
+  if (!dateValues.isValid()) {
+    res.json({
+      'natural': null,
+      'unix': null
+    });
   }
 
+  res.json({
+    'natural': dateValues.format('MMMM DD, YYYY'),
+    'unix': dateValues.format('X')
+  });
 
-  res.json({unix: unixDate, natural: naturalDate})
 })
 
 
