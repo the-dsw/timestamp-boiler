@@ -1,7 +1,10 @@
 var express = require('express')
+var path = require('path')
 var app = express()
 var moment = require('moment')
 var PORT = 3000
+
+app.use(express.static(path.resolve(__dirname, 'views')))
 
 app.get('/:dateValues', function(req, res) {
   var dateValues = moment(req.params.dateValues, 'MMMM DD, YYYY', true);
