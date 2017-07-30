@@ -11,21 +11,21 @@ You can test it at [https://immense-brushlands-3354.herokuapp.com/](https://imme
 ### Usage
 
 ```
-https://immense-brushlands-3354.herokuapp.com/January 10, 2015
+https:///January 10, 2015
 ```
 ```
-https://immense-brushlands-3354.herokuapp.com/1420848000
+https:///1420848000
 ```
 
 ### Sample Output
 
 ```javascript
 {
-  humanReadable: "January 10, 2015",
+  natural: "January 10, 2015",
   unix: "1420848000"
 }
 ```
 
 ### Running this project
 
-Simply launch it with node using `npm run start` or `node server.js`.
+Simply launch it with node using `npm run start` or `node app.js`.
