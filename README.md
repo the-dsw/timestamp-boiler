@@ -6,15 +6,15 @@ This is a microservice API project for Free Code Camp that will accept either a 
 readable date or a unix formatted date and return a json response with the date formatted
 as both. If the input is neither it will return `null` values.
 
-You can test it at [https:///](https:///)
+You can test it at [https://timestamp-boiler.glitch.me](https://timestamp-boiler.glitch.me)
 
 ### Usage
 
 ```
-https:///January 10, 2015
+https://timestamp-boiler.glitch.me/January 10, 2015
 ```
 ```
-https:///1420848000
+https://timestamp-boiler.glitch.me/1420848000
 ```
 
 ### Sample Output
