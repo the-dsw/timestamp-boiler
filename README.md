@@ -4,7 +4,7 @@
 
 This is a microservice API project for Free Code Camp that will accept either a human
 readable date or a unix formatted date and return a json response with the date formatted
-as both. If the input is neither it will return `null` values.
+as both. If it does not contain a date or Unix timestamp, it returns `null` for those properties.
 
 You can test it at [https://timestamp-boiler.glitch.me](https://timestamp-boiler.glitch.me)
 
